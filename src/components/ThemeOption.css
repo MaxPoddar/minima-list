@@ -1,0 +1,10 @@
+.theme-option {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  margin: 0.2rem;
+
+  flex: 0 0 auto;
+}

@@ -1,0 +1,19 @@
+.day-box {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--bg);
+    color: var(--text);
+    border: 2px solid var(--text);
+    font-size: x-large;
+    font-weight: 600;
+    border-radius: 5%;
+}
+
+.day-box:hover {
+    background: oklch(from var(--bg) calc(l - 0.1) c h);
+}
+
+.day-box:focus-visible {
+    background: oklch(from var(--bg) calc(l - 0.1) c h);
+}
+

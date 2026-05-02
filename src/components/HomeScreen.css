@@ -1,0 +1,17 @@
+.menu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: end;
+  padding: 1rem;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 2rem);
+}

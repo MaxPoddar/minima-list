@@ -1,0 +1,58 @@
+.menu-button {
+  position: relative;
+
+  width: 2.75rem;
+  height: 2.75rem;
+
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.75rem;
+
+  background: var(--bg);
+  cursor: pointer;
+}
+
+.menu-button span {
+  position: absolute;
+  left: 50%;
+
+  width: 1.5rem;
+  height: 2px;
+
+  background: var(--text);
+  border-radius: 999px;
+
+  transform: translateX(-50%);
+  transition:
+    top 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.menu-button span:nth-child(1) {
+  top: 0.9rem;
+}
+
+.menu-button span:nth-child(2) {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-button span:nth-child(3) {
+  bottom: 0.9rem;
+}
+
+.menu-button.open span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.open span:nth-child(3) {
+  bottom: auto;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
