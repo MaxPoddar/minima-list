@@ -1,7 +1,6 @@
 import DayBox from "./DayBox";
 import "./HomeScreen.css";
 import MenuButton from "./MenuButton";
-// import ThemeSelector from "./ThemeSelector";
 
 const days = [
   { id: "mon", label: "M" },
@@ -20,7 +19,6 @@ function HomeScreen() {
         <MenuButton />
       </header>
       <main className="main">
-        {/* <ThemeSelector /> */}
         {days.map((day) => (
           <DayBox key={day.id} label={day.label} />
         ))}

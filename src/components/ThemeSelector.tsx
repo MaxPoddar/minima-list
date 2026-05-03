@@ -24,7 +24,13 @@ const themes = [
     theme: "blue-white",
     mainColour: "#26a0be",
     accentColour: "#f8f0e3",
-    label: "Blue light",
+    label: "Blue white",
+  },
+  {
+    theme: "pink-white",
+    mainColour: "#d61894",
+    accentColour: "#f8f0e3",
+    label: "Pink white",
   },
 ] as const;
 

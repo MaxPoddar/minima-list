@@ -1,9 +1,9 @@
-export type Theme = "light" | "dark" | "black-yellow" | "blue-white";
+export type Theme = "light" | "dark" | "black-yellow" | "blue-white" | "pink-white";
 
 export function setTheme(theme : Theme) {
     const root = document.documentElement;
 
-    root.classList.remove("light", "dark", "black-yellow", "blue-white");
+    root.classList.remove("light", "dark", "black-yellow", "blue-white", "pink-white");
     root.classList.add(theme);
 
     localStorage.setItem("theme", theme);
