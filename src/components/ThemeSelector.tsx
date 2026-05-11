@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import ThemeOption from "./ThemeOption";
 import "./ThemeSelector.css";
 
@@ -28,20 +29,47 @@ const themes = [
   },
   {
     theme: "pink-white",
-    mainColour: "#d61894",
-    accentColour: "#f8f0e3",
+    mainColour: "#f8f0e3",
+    accentColour: "#d61894",
     label: "Pink white",
   },
 ] as const;
 
 function ThemeSelector() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  function scrollThemes(direction: "left" | "right") {
+    scrollRef.current?.scrollBy({
+      left: direction === "left" ? -80 : 80,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <div className="outer">
-      <div className="theme-options">
+      <button
+        type="button"
+        className="theme-scroll-button"
+        aria-label="Scroll themes left"
+        onClick={() => scrollThemes("left")}
+      >
+        ‹
+      </button>
+
+      <div ref={scrollRef} className="theme-options">
         {themes.map((item) => (
           <ThemeOption key={item.theme} {...item} />
         ))}
       </div>
+
+      <button
+        type="button"
+        className="theme-scroll-button"
+        aria-label="Scroll themes right"
+        onClick={() => scrollThemes("right")}
+      >
+        ›
+      </button>
     </div>
   );
 }

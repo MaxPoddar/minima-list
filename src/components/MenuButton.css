@@ -1,3 +1,19 @@
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background: var(--bg);
+}
+
+.menu.open{
+
+  width: clamp(12rem, 22vw, 16rem);
+
+  border-left: 2px solid var(--text);
+  border-bottom: 2px solid var(--text);
+  border-bottom-left-radius: 3%;
+}
 
 .menu-button {
   position: relative;
@@ -58,13 +74,11 @@
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.menu-panel {
-    position: absolute;
-    top: 0;
-    right: 0;
+/* .menu-panel {
+    position: relative;
     height: auto;
     width: 20%;
-    z-index: -1;
+    z-index: 1;
     border-left: 2px solid var(--text);
     border-bottom: 2px solid var(--text);
     border-bottom-left-radius: 5%;
@@ -73,6 +87,18 @@
 
     padding-bottom: 1rem;
     gap: 1rem;
+} */
+
+.menu-panel {
+  display: none;
+}
+
+.menu.open .menu-panel{
+  display: grid;
+  width: 100%;
+  gap: 1rem;
+  /* padding-top: 1rem; */
+  padding-bottom: 1rem;
 }
 
 .clear {
@@ -80,9 +106,72 @@
     font-weight: 600;
     background: var(--bg);
     color: var(--text);
-    width: 50%;
+    width: auto;
     border: none;
     cursor: pointer;
     text-align: left;
     padding-left: 1rem;
+}
+
+.clear-action {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  overflow: hidden;
+}
+
+.clear {
+  flex: 0 0 auto;
+}
+
+.clear-confirm {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-0.5rem);
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+    max-width: 0.2s ease;
+}
+
+.clear-action.confirming .clear-confirm {
+  max-width: 6rem;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.clear-confirm-button {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: var(--bg);
+  cursor: pointer;
+  font-size: large;
+  font-weight: 700;
+}
+
+.clear-confirm-button.cancel {
+  color: #d70707;
+  font-size: x-large;
+  font-weight: 900;
+}
+
+.clear-confirm-button.confirm {
+  color: #27c915;
+  font-weight: 700;
+}
+
+.clear-confirm-divider {
+  font-size: large;
+  color: var(--text);
+  transform: translateY(-2px);
+  font-weight: 600;
 }

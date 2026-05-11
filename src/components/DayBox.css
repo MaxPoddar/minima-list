@@ -17,4 +17,3 @@
 .day-box:focus-visible {
     background: oklch(from var(--bg) calc(l - 0.1) c h);
 }
-

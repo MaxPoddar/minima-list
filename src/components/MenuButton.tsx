@@ -4,9 +4,10 @@ import ThemeSelector from "./ThemeSelector";
 
 function MenuButton() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isConfirmingClear, setIsConfirmingClear] = useState(false);
 
   return (
-    <div className="menu">
+    <div className={`menu ${isOpen ? "open" : ""}`}>
       <button
         type="button"
         className={`menu-button ${isOpen ? "open" : ""}`}
@@ -19,16 +20,49 @@ function MenuButton() {
         <span />
         <span />
       </button>
+      <div className="menu-panel">
+        <ThemeSelector />
 
-      {isOpen && (
-        <div id="menu-panel" className="menu-panel">
-          <span style={{ height: `3rem` }} />
-          <ThemeSelector />
-          <button type="button" className="clear">
+        <div
+          className={`clear-action ${isConfirmingClear ? "confirming" : ""}`}
+        >
+          <button
+            type="button"
+            className="clear"
+            onClick={() => setIsConfirmingClear((prev) => !prev)}
+            aria-expanded={isConfirmingClear}
+          >
             Clear
           </button>
+
+          <div className="clear-confirm" aria-hidden={!isConfirmingClear}>
+            <button
+              type="button"
+              className="clear-confirm-button cancel"
+              aria-label="Cancel clear"
+              onClick={() => setIsConfirmingClear(false)}
+            >
+              ✕
+            </button>
+
+            <span className="clear-confirm-divider" aria-hidden="true">
+              |
+            </span>
+
+            <button
+              type="button"
+              className="clear-confirm-button confirm"
+              aria-label="Confirm clear"
+              onClick={() => {
+                // later: clear week notes here
+                setIsConfirmingClear(false);
+              }}
+            >
+              ✓
+            </button>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
