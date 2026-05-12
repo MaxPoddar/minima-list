@@ -1,9 +1,11 @@
 .menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 10;
   background: var(--bg);
+  padding-top: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .menu.open{
@@ -137,8 +139,8 @@
 
   transition:
     opacity 0.2s ease,
-    transform 0.2s ease;
-    max-width: 0.2s ease;
+    transform 0.2s ease,
+    max-width 0.2s ease;
 }
 
 .clear-action.confirming .clear-confirm {

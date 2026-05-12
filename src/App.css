@@ -58,6 +58,16 @@ body,
   --bg: #f8f0e3;
 }
 
+.black-orange {
+  --text: #ff5900;
+  --bg: #2b2828;
+}
+
+.blue-blue {
+  --text: #09b2a4;
+  --bg: #010112;
+}
+
 body {
   color: var(--text);
   background-color: var(--bg);

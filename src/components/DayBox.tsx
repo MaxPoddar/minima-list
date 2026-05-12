@@ -2,11 +2,17 @@ import "./DayBox.css";
 
 type DayBoxProps = {
   label: string;
+  onClick: () => void;
 };
 
-function DayBox({ label }: DayBoxProps) {
+function DayBox({ label, onClick }: DayBoxProps) {
   return (
-    <button className="day-box" type="button" aria-label={label}>
+    <button
+      className="day-box"
+      type="button"
+      aria-label={`Open ${label}`}
+      onClick={onClick}
+    >
       {label}
     </button>
   );

@@ -33,6 +33,18 @@ const themes = [
     accentColour: "#d61894",
     label: "Pink white",
   },
+  {
+    theme: "black-orange",
+    mainColour: "#2b2828",
+    accentColour: "#ff5900",
+    label: "Black orange",
+  },
+  {
+    theme: "blue-blue",
+    mainColour: "#010112",
+    accentColour: "#09b2a4",
+    label: "Blue blue",
+  },
 ] as const;
 
 function ThemeSelector() {
