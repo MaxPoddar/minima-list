@@ -2,13 +2,14 @@ import "./DayBox.css";
 
 type DayBoxProps = {
   label: string;
+  completed: boolean;
   onClick: () => void;
 };
 
-function DayBox({ label, onClick }: DayBoxProps) {
+function DayBox({ label, completed, onClick }: DayBoxProps) {
   return (
     <button
-      className="day-box"
+      className={`day-box ${completed ? "completed" : ""}`}
       type="button"
       aria-label={`Open ${label}`}
       onClick={onClick}

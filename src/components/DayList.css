@@ -1,0 +1,110 @@
+.list {
+  min-height: 0;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+
+  scrollbar-color: var(--text) transparent;
+  scrollbar-width: thin;
+}
+
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: var(--text);
+  border-radius: 999px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.list-items {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+
+  display: grid;
+  gap: 1rem;
+}
+
+.list-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 1rem;
+
+  font-size: clamp(1rem, 2vw, 1.35rem);
+}
+
+.list-bullet {
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.list-text-input {
+  min-width: 0;
+  width: 100%;
+
+  border: none;
+  background: transparent;
+  color: var(--text);
+
+  font: inherit;
+  line-height: 1.4;
+  outline: none;
+
+  resize: none;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.list-text-input::placeholder {
+  color: var(--text);
+  opacity: 0.45;
+}
+
+.list-checkbox,
+.checkbox-placeholder {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0.15rem;
+}
+
+.list-checkbox {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+
+  border: 2px solid var(--text);
+  background: transparent;
+  accent-color: #27c915;
+  cursor: pointer;
+}
+
+.list-checkbox:checked::after {
+  content: "✓";
+  color: #27c915;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  /* transform: translateY(-0.25rem) rotate(8deg); */
+  transform: translateY(-0.60rem)
+}
+
+.list-item.done .list-text-input {
+  opacity: 0.55;
+  text-decoration: line-through;
+}
+
+.new-item {
+  opacity: 0.55;
+}
+
+.new-item:focus-within {
+  opacity: 1;
+}

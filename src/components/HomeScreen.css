@@ -58,12 +58,15 @@
   z-index: 10;
   
   border: 2px solid var(--text);
-  border-radius: 1rem;
+  border-radius: 0.2rem;
   background: var(--bg);
   color: var(--text);
 
   padding: 2%;
   box-sizing: border-box;
+
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
 
   animation: expand-day 0.2s ease-out;
 }

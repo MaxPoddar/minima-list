@@ -2,7 +2,11 @@ import { useState } from "react";
 import "./MenuButton.css";
 import ThemeSelector from "./ThemeSelector";
 
-function MenuButton() {
+type MenuButtonProps = {
+  onClearAll: () => void;
+};
+
+function MenuButton({ onClearAll }: MenuButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isConfirmingClear, setIsConfirmingClear] = useState(false);
 
@@ -54,7 +58,7 @@ function MenuButton() {
               className="clear-confirm-button confirm"
               aria-label="Confirm clear"
               onClick={() => {
-                // later: clear week notes here
+                onClearAll();
                 setIsConfirmingClear(false);
               }}
             >

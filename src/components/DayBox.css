@@ -17,3 +17,14 @@
 .day-box:focus-visible {
     background: oklch(from var(--bg) calc(l - 0.1) c h);
 }
+
+.day-box.completed {
+  background: color-mix(in oklch, var(--bg), #27c915 40%);
+  color: #27c915;
+  border-color: #27c915;
+}
+
+.day-box.completed:hover,
+.day-box.completed:focus-visible {
+  background: color-mix(in oklch, var(--bg), #27c915 32%);
+}
