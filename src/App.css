@@ -68,6 +68,11 @@ body,
   --bg: #010112;
 }
 
+.blue-pink {
+  --text: #d61894;
+  --bg: #010112;
+}
+
 body {
   color: var(--text);
   background-color: var(--bg);

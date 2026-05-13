@@ -169,6 +169,7 @@
 .clear-confirm-button.confirm {
   color: #27c915;
   font-weight: 700;
+  transform: translateY(-0.1rem);
 }
 
 .clear-confirm-divider {

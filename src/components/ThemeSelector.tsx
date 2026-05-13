@@ -45,6 +45,12 @@ const themes = [
     accentColour: "#09b2a4",
     label: "Blue blue",
   },
+  {
+    theme: "blue-pink",
+    mainColour: "#010112",
+    accentColour: "#d61894",
+    label: "Blue pink",
+  },
 ] as const;
 
 function ThemeSelector() {
