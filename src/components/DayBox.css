@@ -19,7 +19,8 @@
 }
 
 .day-box.completed {
-  background: color-mix(in oklch, var(--bg), #27c915 40%);
+  /* background: color-mix(in oklch, var(--bg),  40%); */
+  background: #27c9155f;
   color: #27c915;
   border-color: #27c915;
 }
